@@ -4,3 +4,6 @@ django-cors-headers
 whitenoise
 beautifulsoup4
 django-environ
+djangorestframework-simplejwt
+requests
+stripe

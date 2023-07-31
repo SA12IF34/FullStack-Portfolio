@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.status import *
-from rest_framework.authentication import SessionAuthentication
+from rest_framework_simplejwt.authentication import JWTAuthentication, JWTStatelessUserAuthentication, JWTTokenUserAuthentication
 from rest_framework import permissions
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
@@ -62,7 +62,7 @@ class CheckoutAPI(APIView):
 class UserAPI(APIView):
 
     permission_classes = [permissions.AllowAny]
-
+    authentication_classes = [JWTAuthentication, JWTStatelessUserAuthentication, JWTTokenUserAuthentication]
 
     def post(self, request):
 
@@ -111,6 +111,7 @@ class UserAPI(APIView):
 class CartsAPI(APIView):
     
     permission_classes = [permissions.IsAuthenticated]
+    authentication_classes = [JWTAuthentication, JWTStatelessUserAuthentication, JWTTokenUserAuthentication]
 
     def get(self, request):
         
@@ -137,6 +138,7 @@ class CartsAPI(APIView):
 class CartAPI(APIView):
 
     permission_classes = [permissions.IsAuthenticated]
+    authentication_classes = [JWTAuthentication, JWTStatelessUserAuthentication, JWTTokenUserAuthentication]
 
     def get(self, request, name):
         user = request.user.id
@@ -157,6 +159,7 @@ class CartAPI(APIView):
 class BoughtsAPI(APIView):
 
     permission_classes = [permissions.IsAuthenticated]
+    authentication_classes = [JWTAuthentication, JWTStatelessUserAuthentication, JWTTokenUserAuthentication]
 
     def get(self, request):
         user = request.user.id    
@@ -182,6 +185,7 @@ class BoughtsAPI(APIView):
 class BoughtAPI(APIView):
 
     permission_classes = [permissions.IsAuthenticated]
+    authentication_classes = [JWTAuthentication, JWTStatelessUserAuthentication, JWTTokenUserAuthentication]
 
     def get(self, request, name):
         user = request.user.id
