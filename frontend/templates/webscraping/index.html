@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'webscraping/style.css' %}">
+</head>
+<body>
+
+    <h1>Scraping Project Using BeautifulSoup</h1>
+    <h3>source is <a href="https://openlibrary.org/">openlibrary.org</a></h3>
+    <h4 style="margin: 20px; color: red;">the purpose of this project is to show web scraping skills, not frontend skills.</h4>
+    <br>
+    <div class="trending">
+        <h2>Trending Books</h2>
+        <br>
+        <ul>
+            
+        </ul>
+    </div>
+
+    <br>
+    <br>
+    <div class="subjects">
+        <h2>Subjects</h2>
+        <br>
+        <ul>
+
+        </ul>
+    </div>
+
+    <script type="module" src="{% static 'webscraping/main.js' %}"></script>
+</body>
+</html>

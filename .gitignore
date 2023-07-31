@@ -1,0 +1,9 @@
+.env
+
+frontend/social_media
+
+venv/
+
+/fullstack/.env
+
+/db.sqlite3

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 id="welcome" class="not-welcome">Welcome to my website</h1>
+    </div>
+    <div class="main">
+        <p id="left" class="left-hide">
+            I'm a fullstack developer
+        </p>
+        <p id="left" class="left-hide">
+            I can build complete web applicaions
+        </p>
+        <p id="right" class="right-hide">
+            I design the frontend & user interface as well as making a good user experience
+        </p>
+        <p id="left" class="left-hide">
+            I also build the backend from designing the database 
+            and building API endpoints
+        </p>
+        <p id="right" class="right-hide">
+            to implementing professional & secure
+            user authentication system
+        </p>
+    </div>
+    <br>
+    <div class="skills">
+        <h2>I use for building my web apps the following skills</h2>
+        <br>
+        <div class="backend">
+            <h3>for the backend :</h3>
+            <ul>
+                <li>Python/Django</li>
+                <li>Django rest framework</li>
+                <li>
+                    Various authentication mechanisms
+                </li>
+                <li>Some webscraping skills</li>
+            </ul>
+        </div>
+        <div class="frontend">
+            <h3>for the frontend :</h3>
+            <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>React.Js and it's utilities</li>
+                <li>Next.Js & Next.Js 13</li>
+                <li>TailwindCSS</li>
+                <li>Adding 3D content using Three.Js</li>            
+                <li>Using third party APIs</li>
+            </ul>
+        </div>
+    </div>
+    <div class="projects">
+        <h2>I have several frontend projecs and some fullstack projects</h2>
+        <br>
+        <div class="frontend">
+            <h3>my frontend projects :</h3>
+            <ul>
+                <li id="frontend-portfolio">
+                    <a target="_blank" href="https://fronend.saifchan.site/">
+                        <img src="{% static 'home/imgs/Hello.png' %}" alt="">
+                    </a>
+                </li>
+                <li id="steelmind">
+                    <a target="_blank" href="https://steelmind.saifchan.site/">
+                        <img src="{% static 'home/imgs/steelMind.png' %}" alt="frontend portfolio project">
+                    </a>
+                </li>
+                <li id="chat">
+                    <a target="_blank" href="https://chat.saifchan.site/">
+                        <img src="{% static 'home/imgs/chat.png' %}" alt="frontend portfolio project">
+                    </a>
+                </li>
+                <li id="translate">
+                    <a target="_blank" href="https://translate.saifchan.site/">
+                        <img src="{% static 'home/imgs/translator.png' %}" alt="frontend portfolio project">
+                    </a>
+                </li>
+                <li id="fate">
+                    <a target="_blank" href="https://fate-series.saifchan.site/">
+                        <img src="{% static 'home/imgs/fate.png' %}" alt="frontend portfolio project">
+                    </a>
+                </li>
+                <li id="landing-page">
+                    <a target="_blank" href="https://portfolio.landing-page.saifchan.site/">
+                        <img src="{% static 'home/imgs/landingPage.png' %}" alt="frontend portfolio project">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="fullstack">
+            <h3>my fullstack projects :</h3>
+            <ul>
+                <li id="web-scraping">
+                    <a target="_blank" href="/projects/web-scraping/">
+                        <img src="{% static 'home/imgs/Books.png' %}" alt="fullstack portfolio project">
+                    </a>
+                </li>
+                <li id="scentchan">
+                    <a target="_blank" href="https://scentchan.saifchan.site/">
+                        <img src="{% static 'home/imgs/ScentChan.png' %}" alt="fullstack portfolio project">
+                    </a>
+                </li>
+                <li id="name">
+                    <a target="_blank" href="https://name.saifchan.site/">
+                        <img src="{% static 'home/imgs/home.png' %}" alt="fullstack portfolio project">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="contact">
+        <h2>my accounts and contact info</h2>
+        <div>
+            <ul>
+                <li>
+                    <a href="#linkedin">
+                    LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a href="#github">
+                    GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="#upwork">
+                    Upwork
+                    </a>
+                </li>
+                <li>
+                    Email : saifchan@mail.com
+                </li>
+                <li>
+                    Phone No. : +962799562745
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="module" src="{% static 'home/main.js' %}"></script>
+</body>
+</html>
