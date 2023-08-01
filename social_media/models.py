@@ -48,7 +48,7 @@ class Post(models.Model):
 
 
     def __str__(self):
-        return 'post of '+self.author.name
+        return 'post of '+self.author.username
 
 class Comment(models.Model):
     content = models.TextField()
