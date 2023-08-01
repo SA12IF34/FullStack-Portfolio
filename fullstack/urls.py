@@ -10,5 +10,4 @@ urlpatterns = [
     path('projects/web-scraping/', include('webscraping.urls')),
     path('projects/ecommerce/', include('ecommerce.urls')),
     path('projects/social_media/', include('social_media.urls'))
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
- 
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 

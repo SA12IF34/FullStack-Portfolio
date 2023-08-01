@@ -112,7 +112,7 @@ class UserAPI(APIView):
 class CartsAPI(APIView):
     
     permission_classes = [permissions.IsAuthenticated]
-    authentication_classes = [JWTStatelessUserAuthentication]
+    authentication_classes = [JWTStatelessUserAuthentication, JWTAuthentication]
 
     def get(self, request):
         
