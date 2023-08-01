@@ -229,6 +229,10 @@ body>div>div {
         font-size: 4.5em;
     }
 
+    .main p {
+        font-size: 1.7em;
+    }
+
     p, h2, h3, h4 {
         width: auto;
     }
@@ -238,9 +242,9 @@ body>div>div {
         width: 100%;
         height: 200px;
     }
-    
-    .main p {
-        font-size: 1.7em;
+
+    ul li {
+        font-size: 1.4em;
     }
 }
 
@@ -248,7 +252,5 @@ body>div>div {
 @media screen and (max-width: 401px) {
     
 
-    ul li {
-        font-size: 1.4em;
-    }
+    
 }
