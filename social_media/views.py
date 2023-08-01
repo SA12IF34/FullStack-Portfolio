@@ -149,10 +149,11 @@ class AccountAPI(APIView):
     def get(self, request, id=False):
         if id:
             try:
-                user = User.objects.get(id=id)
-            except User.DoesNotExist:
-
                 user = Account.objects.get(id=id).user
+                
+            except Account.DoesNotExist:
+                user = User.objects.get(id=id)
+                
             
 
             serializer = AccountSerializer(instance=user.account)
