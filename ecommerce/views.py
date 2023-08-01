@@ -32,7 +32,7 @@ DOMAIN = 'http://localhost:5173/buy/'
 class CheckoutAPI(APIView):
 
     permission_classes = [permissions.IsAuthenticated]
-    authentication_classes = [JWTAuthentication]
+    # authentication_classes = [JWTAuthentication]
 
     def get(self, request):
 
@@ -63,7 +63,7 @@ class CheckoutAPI(APIView):
 class UserAPI(APIView):
 
     permission_classes = [permissions.AllowAny]
-    authentication_classes = [JWTAuthentication]
+    # authentication_classes = [JWTAuthentication]
 
     def post(self, request):
 
@@ -112,7 +112,7 @@ class UserAPI(APIView):
 class CartsAPI(APIView):
     
     permission_classes = [permissions.IsAuthenticated]
-    authentication_classes = [JWTAuthentication]
+    # authentication_classes = [JWTAuthentication]
 
     def get(self, request):
         
@@ -139,7 +139,7 @@ class CartsAPI(APIView):
 class CartAPI(APIView):
 
     permission_classes = [permissions.IsAuthenticated]
-    authentication_classes = [JWTAuthentication]
+    # authentication_classes = [JWTAuthentication]
 
     def get(self, request, name):
         user = request.user.id
@@ -160,7 +160,7 @@ class CartAPI(APIView):
 class BoughtsAPI(APIView):
 
     permission_classes = [permissions.IsAuthenticated]
-    authentication_classes = [JWTAuthentication]
+    # authentication_classes = [JWTAuthentication]
 
     def get(self, request):
         user = request.user.id    
@@ -186,7 +186,7 @@ class BoughtsAPI(APIView):
 class BoughtAPI(APIView):
 
     permission_classes = [permissions.IsAuthenticated]
-    authentication_classes = [JWTAuthentication]
+    # authentication_classes = [JWTAuthentication]
 
     def get(self, request, name):
         user = request.user.id
