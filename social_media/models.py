@@ -59,3 +59,17 @@ class Comment(models.Model):
 
     def __str__(self):
         return 'comment of ' + self.author
+
+class Like(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    account = models.ForeignKey(Account, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.account.username} | post {self.post.post_id}'
+
+class Dislike(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    account = models.ForeignKey(Account, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.account.username} | post {self.post.post_id}'

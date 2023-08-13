@@ -18,5 +18,7 @@ urlpatterns = [
     path('posts/type/<str:type>/', PostsAPI.as_view()),
     path('posts/author/<int:author>/', PostsAPI.as_view()),
     path('posts/<int:id>/', PostAPI.as_view()),
+    path('like/<int:id>/', LikeAPI.as_view()),
+    path('dislike/<int:id>/', DislikeAPI.as_view()),
     path('comments/<int:post>/', CommentsAPI.as_view()),
 ]
