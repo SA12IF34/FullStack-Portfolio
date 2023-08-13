@@ -385,9 +385,30 @@ class PostAPI(APIView):
 
     def get(self, request, id):
         post = Post.objects.get(post_id=id)
+        likes = post.like_set
+        dislikes = post.dislike_set
         serializer = PostSerializer(instance=post)
+        data = serializer.data
+        data['likes'] = likes.count()
+        data['dislikes'] = dislikes.count()
+        data['liked'] = False
+        data['disliked'] = False
 
-        return Response(data=serializer.data, status=HTTP_200_OK)
+        account = request.user.account
+        try:
+            like =account.like_set.get(post=post)
+            if like :
+                data['liked'] = True
+
+        except ObjectDoesNotExist:
+            try:
+                dislike = account.dislike_set.get(post=post)
+                if dislike :
+                    data['disliked'] = True
+            except:
+                pass
+
+        return Response(data=data, status=HTTP_200_OK)
 
     def patch(self, request, id):
         post = Post.objects.get(post_id=id)
@@ -407,6 +428,62 @@ class PostAPI(APIView):
 
         post.delete()
 
+        return Response(status=HTTP_202_ACCEPTED)
+
+
+
+# Likes System
+
+class LikeAPI(APIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [SessionAuthentication]
+
+    def post(self, request, id):
+
+        account = request.user.account
+        post = Post.objects.get(post_id=id)
+        try: 
+            like_obj = Like.objects.get(post=post, account=account)
+            like_obj.delete()
+            return Response(status=HTTP_204_NO_CONTENT)
+        except Like.DoesNotExist:
+            pass
+        try:
+            dislike_obj = Dislike.objects.get(post=post, account=account)
+            dislike_obj.delete()
+        except Dislike.DoesNotExist:
+            pass
+
+        like_obj = Like(post=post, account=account)
+        like_obj.save()
+
+        return Response(status=HTTP_202_ACCEPTED)
+
+
+class DislikeAPI(APIView):
+
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [SessionAuthentication]
+
+    def post(self, request, id):
+
+        account = request.user.account
+        post = Post.objects.get(post_id=id)
+        try:
+            dislike_obj = Dislike.objects.get(post=post, account=account)
+            dislike_obj.delete()
+            return Response(status=HTTP_204_NO_CONTENT)
+        except Dislike.DoesNotExist:
+            pass
+        try:
+            like_obj = Like.objects.get(post=post, account=account)
+            like_obj.delete()
+        except Like.DoesNotExist:
+            pass
+        
+        dislike_obj = Dislike(post=post, account=account)
+        dislike_obj.save()
+        
         return Response(status=HTTP_202_ACCEPTED)
 
 

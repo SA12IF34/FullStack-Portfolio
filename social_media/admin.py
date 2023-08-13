@@ -16,3 +16,5 @@ class CustomUserAdmin(UserAdmin):
 admin.site.register(Account, AccountAdmin)
 admin.site.register(Follow)
 admin.site.register(Post)
+admin.site.register(Like)
+admin.site.register(Dislike)
