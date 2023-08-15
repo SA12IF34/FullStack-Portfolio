@@ -40,6 +40,7 @@ def upload_to(self, filename):
 class Post(models.Model):
     post_id = models.AutoField(primary_key=True)
     content = models.TextField()
+    edit_content = models.TextField(null=True, blank=True)
     author = models.ForeignKey(Account, on_delete=models.CASCADE)
     likes = models.IntegerField(default=0)
     dislikes = models.IntegerField(default=0)

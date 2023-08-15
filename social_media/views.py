@@ -362,6 +362,7 @@ class PostsAPI(APIView):
         account = request.user.account
         data = {
             "content": request.data['content'],
+            "edit_content": request.data['edit_content'],
             "author": account.id,
             
         }
@@ -410,16 +411,6 @@ class PostAPI(APIView):
 
         return Response(data=data, status=HTTP_200_OK)
 
-    def patch(self, request, id):
-        post = Post.objects.get(post_id=id)
-        serializer = PostSerializer(instance=post, data=request.data, partial=True)
-        
-        if serializer.is_valid():
-            serializer.save()
-            
-            return Response(status=HTTP_202_ACCEPTED)
-
-        return Response(serializer.errors, status=HTTP_500_INTERNAL_SERVER_ERROR)
 
     def delete(self, request, id):
         post = Post.objects.get(post_id=id)
@@ -430,7 +421,33 @@ class PostAPI(APIView):
 
         return Response(status=HTTP_202_ACCEPTED)
 
+class PostEditAPI(APIView):
 
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, id):
+        account = request.user.account
+        post = Post.objects.get(post_id=id)
+        if post.author != account:
+            return Response(status=HTTP_403_FORBIDDEN)
+        
+        serializer = PostSerializer(instance=post)
+
+        return Response(data=serializer.data, status=HTTP_200_OK)
+
+    def patch(self, request, id):
+        account = request.user.account
+        post = Post.objects.get(post_id=id)
+        if post.author.id != account.id:
+            return Response(status=HTTP_403_FORBIDDEN)
+        serializer = PostSerializer(instance=post, data=request.data, partial=True)
+        
+        if serializer.is_valid():
+            serializer.save()
+            
+            return Response(status=HTTP_202_ACCEPTED)
+
+        return Response(serializer.errors, status=HTTP_500_INTERNAL_SERVER_ERROR)
 
 # Likes System
 
@@ -514,4 +531,19 @@ class CommentsAPI(APIView):
             serializer.save()
 
             return Response(data=serializer.data, status=HTTP_201_CREATED)
+
+
+class CommentAPI(APIView):
+
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [SessionAuthentication]
+
+    def delete(self, request, pk):
+        comment = Comment.objects.get(id=pk)
+        comment.delete()
+
+        return Response(status=HTTP_204_NO_CONTENT)
+
+
+
 
