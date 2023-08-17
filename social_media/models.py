@@ -74,3 +74,16 @@ class Dislike(models.Model):
 
     def __str__(self):
         return f'{self.account.username} | post {self.post.post_id}'
+
+
+CHOICES = [
+    ('follow', 'follow'),
+    ('unfollow', 'unfollow')
+]
+
+class FollowNotification(models.Model):
+    notification_type = models.CharField(max_length=50, choices=CHOICES)
+    account = models.OneToOneField(Account, on_delete=models.CASCADE)
+    username = models.CharField(max_length=200, default='username')
+    target = models.IntegerField(default=0)
+

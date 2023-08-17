@@ -172,10 +172,13 @@ class AccountAPI(APIView):
         else:
             user = request.user
             if user.is_authenticated:
-                serializer = AccountSerializer(instance=user.account)
-                serializer2 = FollowSerializer(instance=user.follow)
-                data = serializer.data
-                data['followings'] = serializer2.data['follow_accounts']
+                account = AccountSerializer(instance=user.account)
+                follow = FollowSerializer(instance=user.follow)
+                notifications = FollowNotification.objects.filter(target=account.data['id']).order_by('-id')
+                serializer = NotificationSerializer(instance=notifications, many=True)
+                data = account.data
+                data['followings'] = follow.data['follow_accounts']
+                data['notifications'] = serializer.data
                 return Response(data=data, status=HTTP_200_OK)
         
         return Response(status=HTTP_403_FORBIDDEN)
@@ -299,6 +302,9 @@ class FollowsAPI(APIView):
             follow.save()
             target_account.save()
 
+            notification = FollowNotification(notification_type='follow', account=user.account, username=follow.name, target=target_account.id)
+            notification.save()
+
             return Response(status=HTTP_202_ACCEPTED)
         else :
             return Response(status=HTTP_208_ALREADY_REPORTED)
@@ -322,6 +328,9 @@ class UnfollowAPI(APIView):
 
             follow.save()
             target_account.save()
+
+            notification = FollowNotification(notification_type='unfollow', account=user.account, username=follow.name,target=target_account.id)
+            notification.save()
 
             return Response(status=HTTP_202_ACCEPTED)
         except:
@@ -546,4 +555,24 @@ class CommentAPI(APIView):
 
 
 
+# Delete Notification API
+class NotificationAPI(APIView):
 
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [SessionAuthentication]
+
+    def get(self, request):
+        account = request.user.account
+        notifications = FollowNotification.objects.filter(target=account.id).order_by('-id')
+        serializer = NotificationSerializer(instance=notifications, many=True)
+        
+        return Response(data=serializer.data, status=HTTP_200_OK)
+
+    def delete(self, request, id):
+        notification = FollowNotification.objects.get(id=id)
+        notification.delete()
+
+        notifications = FollowNotification.objects.filter(target=request.user.account.id).order_by('-id')
+        serializer = NotificationSerializer(instance=notifications, many=True)
+
+        return Response(data=serializer.data,status=HTTP_202_ACCEPTED)
