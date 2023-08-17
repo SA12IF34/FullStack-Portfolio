@@ -22,5 +22,7 @@ urlpatterns = [
     path('like/<int:id>/', LikeAPI.as_view()),
     path('dislike/<int:id>/', DislikeAPI.as_view()),
     path('comments/<int:post>/', CommentsAPI.as_view()),
-    path('comment/<int:pk>/', CommentAPI.as_view())
+    path('comment/<int:pk>/', CommentAPI.as_view()),
+    path('notifications/', NotificationAPI.as_view()),
+    path('notification/<int:id>/delete/', NotificationAPI.as_view())
 ]
