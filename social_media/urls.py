@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import *
 
-urlpatterns = [
+urlpatterns = [ 
     path('token/', CsrfTokenAPI.as_view()),
     path('create-account/', RegisterAPI.as_view()),
     path('login/', AuthenticationAPI.as_view()),
