@@ -152,39 +152,55 @@ class AccountAPI(APIView):
                 user = Account.objects.get(id=id).user
                 
             except Account.DoesNotExist:
-                user = User.objects.get(id=id)
-                
-            
+                try:
+                    user = User.objects.get(id=id)
+                except User.DoesNotExist:
+                    return Response(status=HTTP_404_NOT_FOUND)
 
             serializer = AccountSerializer(instance=user.account)
-            serializer2 = FollowSerializer(instance=user.follow)
             data = serializer.data
             
-            followers = Follow.objects.filter(id__in=serializer.data['followers'])
-            followings = Account.objects.filter(id__in=serializer2.data['follow_accounts'])
-            followers_serializer = FollowSerializer(instance=followers, many=True)
-            followings_serializer = AccountSerializer(instance=followings, many=True)
+            try:
+                serializer2 = FollowSerializer(instance=user.follow)
             
+                followers = Follow.objects.filter(id__in=serializer.data['followers'])
+                followings = Account.objects.filter(id__in=serializer2.data['follow_accounts'])
+                followers_serializer = FollowSerializer(instance=followers, many=True)
+                followings_serializer = AccountSerializer(instance=followings, many=True)
+                
+                data['followings'] = followings_serializer.data
+                data['followers'] = followers_serializer.data
+            except:
+                pass
+
             data['email'] = ''
-            data['followings'] = followings_serializer.data
-            data['followers'] = followers_serializer.data
+            
             return Response(data=data, status=HTTP_200_OK)
         else:
             user = request.user
             if user.is_authenticated:
                 account = AccountSerializer(instance=user.account)
-                follow = FollowSerializer(instance=user.follow)
+                data = account.data
+               
+                try:
+                    follow = FollowSerializer(instance=user.follow)
+                    data['followings'] = follow.data['follow_accounts']
+                except:
+                    pass     
+                
                 notifications = FollowNotification.objects.filter(target=account.data['id']).order_by('-id')
                 serializer = NotificationSerializer(instance=notifications, many=True)
-                data = account.data
-                data['followings'] = follow.data['follow_accounts']
                 data['notifications'] = serializer.data
+                
                 return Response(data=data, status=HTTP_200_OK)
         
-        return Response(status=HTTP_403_FORBIDDEN)
+        return Response(data={"failed": "it failed"}, status=HTTP_403_FORBIDDEN)
 
     def patch(self, request):
         user = request.user
+        if len(request.data) == 0:
+            return Response(status=HTTP_400_BAD_REQUEST)
+         
         if 'profile_img' in request.data.keys():
             user.account.profile_img.delete(save=True)
             serializer = AccountSerializer(instance=user.account, data=request.data, partial=True)
@@ -196,6 +212,9 @@ class AccountAPI(APIView):
             user.save()
 
             del request.data['password']
+
+            login(request, user)
+            return Response(status=HTTP_202_ACCEPTED)
 
 
         if len(request.data) > 0:
@@ -211,10 +230,13 @@ class AccountAPI(APIView):
                             'name': request.data['username']
                         }
                         
-                        serializer2 = FollowSerializer(instance=user.follow, data=data, partial=True)
+                        
                         try:
+                            serializer2 = FollowSerializer(instance=user.follow, data=data, partial=True)
                             if serializer2.is_valid(raise_exception=True):
                                 serializer2.save()
+                        except User.follow.RelatedObjectDoesNotExist:
+                            pass
                         except:
                             return Response(serializer2.errors, status=HTTP_500_INTERNAL_SERVER_ERROR)
                     elif not 'username' in request.data.keys() and 'email' in request.data.keys():
@@ -237,17 +259,10 @@ class AccountAPI(APIView):
             return Response(status=HTTP_400_BAD_REQUEST)
         
                     
-        login(request, user)
-        return Response(status=HTTP_202_ACCEPTED)
+        
         
 
-class SearchAPI(APIView):
 
-    def get(self, request, term):
-        accounts = Account.objects.filter(username__contains=term)
-        serializer = AccountSerializer(instance=accounts, many=True)
-
-        return Response(data=serializer.data, status=HTTP_200_OK)
 
 class FollowersAPI(APIView):
 
@@ -261,7 +276,7 @@ class FollowersAPI(APIView):
         followers = Follow.objects.filter(id__in=serializer.data['followers'])
         serializer2 = FollowSerializer(instance=followers, many=True)
 
-        return Response(data=serializer2.data)
+        return Response(data=serializer2.data, status=HTTP_200_OK)
 
 
 
@@ -283,6 +298,7 @@ class FollowsAPI(APIView):
 
     def post(self, request):
         user = request.user
+
         target_account = Account.objects.get(user=request.data['target'])
         try:
             follow = user.follow
@@ -321,7 +337,7 @@ class UnfollowAPI(APIView):
             user = request.user
             follow = user.follow
             target_account = Account.objects.get(user=request.data['target'])
-            
+                
             follow.follow_accounts.remove(target_account)
             target_account.followers.remove(follow)
             target_account.followers_number -= 1
@@ -334,9 +350,20 @@ class UnfollowAPI(APIView):
 
             return Response(status=HTTP_202_ACCEPTED)
         except:
+            
             return Response(status=HTTP_500_INTERNAL_SERVER_ERROR)
 
 
+
+class SearchAPI(APIView):
+
+    permission_classes = [AllowAny]
+
+    def get(self, request, term):
+        accounts = Account.objects.filter(username__contains=term)
+        serializer = AccountSerializer(instance=accounts, many=True)
+
+        return Response(data=serializer.data, status=HTTP_200_OK)
 
 
 # Posting System 
@@ -468,23 +495,48 @@ class LikeAPI(APIView):
 
         account = request.user.account
         post = Post.objects.get(post_id=id)
+        
         try: 
             like_obj = Like.objects.get(post=post, account=account)
             like_obj.delete()
-            return Response(status=HTTP_204_NO_CONTENT)
+            try:
+                serializer = PostSerializer(instance=post, data={"likes": post.likes-1}, partial=True)
+                if serializer.is_valid(raise_exception=True):
+                    serializer.save()     
+                    return Response(data=serializer.data, status=HTTP_205_RESET_CONTENT)
+            except:
+                return Response(status=HTTP_500_INTERNAL_SERVER_ERROR)
+        
         except Like.DoesNotExist:
             pass
+        
         try:
             dislike_obj = Dislike.objects.get(post=post, account=account)
             dislike_obj.delete()
+            try:
+                serializer1 = PostSerializer(instance=post, data={"dislikes": post.dislikes-1}, partial=True)
+                if serializer1.is_valid(raise_exception=True):
+                    serializer1.save()
+            except:
+                return Response(status=HTTP_500_INTERNAL_SERVER_ERROR)
+        
         except Dislike.DoesNotExist:
             pass
+     
+        try:
+            like_obj = Like(post=post, account=account)
+            like_obj.save()
 
-        like_obj = Like(post=post, account=account)
-        like_obj.save()
+            post = Post.objects.get(post_id=id)
+            serializer2 = PostSerializer(instance=post, data={"likes": post.likes+1}, partial=True)
+            if serializer2.is_valid(raise_exception=True):
+                serializer2.save()
 
-        return Response(status=HTTP_202_ACCEPTED)
-
+                return Response(data=serializer2.data, status=HTTP_202_ACCEPTED)
+        except:
+            return Response(status=HTTP_500_INTERNAL_SERVER_ERROR)
+        
+        return Response(status=HTTP_400_BAD_REQUEST)
 
 class DislikeAPI(APIView):
 
@@ -498,19 +550,44 @@ class DislikeAPI(APIView):
         try:
             dislike_obj = Dislike.objects.get(post=post, account=account)
             dislike_obj.delete()
-            return Response(status=HTTP_204_NO_CONTENT)
+            try:
+                serializer = PostSerializer(instance=post, data={"dislikes": post.dislikes-1}, partial=True)
+                if serializer.is_valid(raise_exception=True):
+                    serializer.save() 
+                    return Response(data=serializer.data, status=HTTP_205_RESET_CONTENT)
+            except:
+                return Response(status=HTTP_500_INTERNAL_SERVER_ERROR)
+        
         except Dislike.DoesNotExist:
             pass
+        
         try:
             like_obj = Like.objects.get(post=post, account=account)
             like_obj.delete()
+            try:
+                serializer1 = PostSerializer(instance=post, data={"likes": post.likes-1}, partial=True)
+                if serializer1.is_valid(raise_exception=True):
+                    serializer1.save()
+            except:
+                return Response(status=HTTP_500_INTERNAL_SERVER_ERROR)
+            
         except Like.DoesNotExist:
             pass
         
-        dislike_obj = Dislike(post=post, account=account)
-        dislike_obj.save()
+        try:
+            dislike_obj = Dislike(post=post, account=account)
+            dislike_obj.save()
+
+            post = Post.objects.get(post_id=id)
+            serializer2 = PostSerializer(instance=post, data={"dislikes": post.dislikes+1}, partial=True)
+            if serializer2.is_valid(raise_exception=True):
+                serializer2.save()
+
+                return Response(data=serializer2.data, status=HTTP_202_ACCEPTED)
+        except:
+            return Response(status=HTTP_500_INTERNAL_SERVER_ERROR)
         
-        return Response(status=HTTP_202_ACCEPTED)
+        return Response(status=HTTP_400_BAD_REQUEST)
 
 
 
@@ -575,4 +652,4 @@ class NotificationAPI(APIView):
         notifications = FollowNotification.objects.filter(target=request.user.account.id).order_by('-id')
         serializer = NotificationSerializer(instance=notifications, many=True)
 
-        return Response(data=serializer.data,status=HTTP_202_ACCEPTED)
+        return Response(data=serializer.data, status=HTTP_205_RESET_CONTENT)

@@ -19,7 +19,7 @@ class Account(models.Model):
     followers = models.ManyToManyField('Follow', blank=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    def __str__(self): 
+    def __str__(self):  
         return self.username
 
 class Follow(models.Model):
@@ -83,7 +83,7 @@ CHOICES = [
 
 class FollowNotification(models.Model):
     notification_type = models.CharField(max_length=50, choices=CHOICES)
-    account = models.OneToOneField(Account, on_delete=models.CASCADE)
-    username = models.CharField(max_length=200, default='username')
-    target = models.IntegerField(default=0)
+    account = models.ForeignKey(Account, on_delete=models.CASCADE)
+    username = models.CharField(max_length=200)
+    target = models.IntegerField()
 
