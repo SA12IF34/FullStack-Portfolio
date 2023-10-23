@@ -5,7 +5,7 @@ And reactJS, nextJS, and vanillaJS for the frontend.
 The project shows you how I write my code, and what libraries and frameworks I use.
 ___
 ## tests
-You can take a look at the tests written in the project, and running them in case you cloned the repo by using the following commands.
+You can take a look at the tests written in the project, and running them by using the following commands in case you cloned the repo.
 #
 for all tests in the project
 ```
