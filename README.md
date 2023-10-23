@@ -6,16 +6,17 @@ The project shows you how I write my code, and what libraries and frameworks I u
 ___
 ## tests
 You can take a look at the tests written in the project, and running them in case you cloned the repo by using the following commands.
+#
+for all tests in the project
 ```
-# for all tests in the project
 python manage.py test 
 ```
+for all tests in one app
 ```
-# for all tests in one app
 python manage.py test <app-name>
 ```
+for tests inside of one test file
 ```
-# for tests inside of one test file
 python manage.py test <app-name> test_<name>.py
 ```
 ___
