@@ -134,25 +134,38 @@ body>div>div {
 .projects ul li {
     width: 180px;
     height: 140px;
-    border-radius: 10px;
-    background-color: white;
     margin: 20px;
     position: relative;
+}
+.projects ul li a {
+    display: block;
+    width: 100%;
+    position: relative;
     overflow: hidden;
+    border-radius: 10px;
+}
+.projects ul li a:nth-child(1) {
+    height: 100%;
     box-shadow: 0px 1px 5px 0px #001531, 
     0px -1px 5px 0px #001531;
 }
+.projects ul li a:nth-child(2), 
+.projects ul li a:nth-child(3) {
+    text-align: center;
+    color: white;
+    margin-top: 5px;
+}
 
 
-#frontend-portfolio a::after {content: 'frontend portfolio';}
-#steelmind a::after {content: 'mental health organization';}
-#chat a::after {content: 'chat app using ChatGPT API';}
-#translate a::after {content: 'AI powered translator';}
-#fate a::after {content: 'fate series page using TailwindCSS';}
-#landing-page a::after {content: 'landing page portfolio';}
-#web-scraping a::after {content: 'web scraping project with django';}
-#scentchan a::after {content: 'perfumes ecommerce project';}
-#name a::after {content: 'simple social media app'};
+#agency a:nth-child(1):after {content: 'web development services agency';}
+#steelmind a:nth-child(1)::after {content: 'mental health organization';}
+#chat a:nth-child(1)::after {content: 'chat app using ChatGPT API';}
+#translate a:nth-child(1)::after {content: 'AI powered translator';}
+#fate a:nth-child(1)::after {content: 'fate series page using TailwindCSS';}
+#landing-page a:nth-child(1)::after {content: 'landing page portfolio';}
+#web-scraping a:nth-child(1)::after {content: 'web scraping project with django';}
+#scentchan a:nth-child(1)::after {content: 'perfumes ecommerce project';}
+#name a:nth-child(1)::after {content: 'simple social media app'};
 
 
 .projects li a {
@@ -170,7 +183,7 @@ body>div>div {
     transform: translate(-50%, -50%);
 }
 
-.projects ul a::after {
+.projects ul a:nth-child(1)::after {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -184,7 +197,7 @@ body>div>div {
     transition: 0.3s ease-out;
     opacity: 0;
 }
-.projects ul li:hover a::after {
+.projects ul li a:nth-child(1):hover::after {
     opacity: 1 !important;
 }
 
@@ -211,9 +224,7 @@ body>div>div {
     .projects ul {
         justify-content: space-evenly;
     }
-    /* .projects ul li {
-        margin: 10px;
-    } */
+
 }
 
 @media screen and (max-width: 600px) {
@@ -241,6 +252,8 @@ body>div>div {
     .projects ul li {
         width: 100%;
         height: 200px;
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
 
     ul li {
@@ -249,8 +262,26 @@ body>div>div {
 }
 
 
-@media screen and (max-width: 401px) {
+@media screen and (max-width: 412px) {
     
 
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1.7em;
+    }
     
+    .projects ul li a:nth-child(2), 
+    .projects ul li a:nth-child(3) {
+        font-size: 0.9em;
+    }
+
+    .contact ul li,
+    .skills ul li {
+        font-size: 1.3em;
+    }
+
+
 }
