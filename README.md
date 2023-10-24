@@ -20,7 +20,7 @@ The second project and it is perfumes ecommerce which has it's back end in this 
 the project is built using a lot of utilities and you can see them here in [it's app folder](/ecommerce).
 ___
 ### Social media
-Our last biggest project, this is a project which it's front end is build using nextJS [here](https://github.com/SA12IF34/social-media-frontend), and it's back end is in this repo. The project has a lot of functionalities and database design. [it's app folder](/social_media)
+Our last and biggest project, this is a project which it's front end is build using nextJS [here](https://github.com/SA12IF34/social-media-frontend), and it's back end is in this repo. The project has a lot of functionalities and database design. [it's app folder](/social_media)
 ___
 ## tests
 You can take a look at the tests written in the project, and running them by using the following commands in case you cloned the repo.
