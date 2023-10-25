@@ -8,7 +8,7 @@ ___
 The project is devided into four parts, which are home, web scraping, ecommerce, and social media.
 #
 ### Home
-It represents the first page which you face when visit the website, and it represents the introduction and description of me any my website, as well as it
+It represents the first page which you face when visit the website, and it represents the introduction and description of me any my work, as well as it
 displays my skills, projects and contact info.
 ___
 ### Web scraping
