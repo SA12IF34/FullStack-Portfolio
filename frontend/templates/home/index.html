@@ -4,143 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'home/style.css' %}">
 </head>
 <body>
-    <div class="container">
-        <h1 id="welcome" class="not-welcome">Welcome to my website</h1>
-    </div>
-    <div class="main">
-        <p id="left" class="left-hide">
-            My name is Saif, I'm a fullstack developer.
-            I can build complete web applicaions
-        </p>
-        <p id="right" class="right-hide">
-            I'm proficient in buildig frontend with conveying the UX, and making sure 
-            the UI meets the design.
-        </p>
-        <p id="left" class="left-hide">
-            As I build the backend from database design to implementing strong 
-            and secure API endpoints.
-        </p>
-    </div>
-    <br>
-    <div class="skills">
-        <h2>I use for building web apps the following skills</h2>
-        <br>
-        <div class="backend">
-            <h3>for the backend :</h3>
-            <ul>
-                <li>Python/Django</li>
-                <li>Django rest framework</li>
-                <li>
-                    Various authentication mechanisms
-                </li>
-                <li>webs scraping using scrapy and beautifulSoup</li>
-            </ul>
-        </div>
-        <div class="frontend">
-            <h3>for the frontend :</h3>
-            <ul>
-                <li>HTML, CSS, JavaScript</li>
-                <li>React.Js/Next.Js</li>
-                <li>TailwindCSS</li>
-                <li>Three.Js</li>            
-                <li>Integrating APIs</li>
-            </ul>
-        </div>
-        <div class="all">
-            <h3>for all :</h3>
-            <ul>
-                <li>Testing</li>
-                <li>Deployment</li>
-                <li>Using AI utilities</li>
-            </ul>
-        </div>
-    </div>
-    <div class="projects">
-        <h2>My portfolio projects</h2>
-        <br>
-        <div class="frontend">
-            <h3>frontend projects :</h3>
-            <ul>
-                <li id="agency">
-                    <a target="_blank" href="https://agencysaif.vercel.app/">
-                        <img src="{% static 'home/imgs/agency.png' %}" alt="">
-                    </a>
-                    <a target="_blank" href="https://github.com/SA12IF34/agency/">Github repo</a>
-                </li>
-                <li id="steelmind">
-                    <a target="_blank" href="https://steelmind.saifchan.online/">
-                        <img src="{% static 'home/imgs/steelMind.png' %}" alt="frontend portfolio project">
-                    </a>
-                    <a target="_blank" href="https://github.com/SA12IF34/SteelMind">Github repo</a>
-                </li>
-                <li id="fate">
-                    <a target="_blank" href="https://fate-series.saifchan.online/">
-                        <img src="{% static 'home/imgs/fate.png' %}" alt="frontend portfolio project">
-                    </a>
-                    <a target="_blank" href="https://github.com/SA12IF34/Fate-Page">Github repo</a>
-                </li>
+    <div class="root">
+        <section class="intro"> 
+            
+        </section>
+        <section class="qualifications">
+            <div class="services">
 
-            </ul>
-        </div>
-        <div class="fullstack">
-            <h3>fullstack projects :</h3>
-            <ul>
-                <li id="web-scraping">
-                    <a target="_blank" href="/projects/web-scraping/">
-                        <img src="{% static 'home/imgs/Books.png' %}" alt="fullstack portfolio project">
-                    </a>
-                    <a target="_blank" href="https://github.com/SA12IF34/FullStack-Portfolio/tree/main/frontend/templates/webscraping">frontend repo</a>
-                    <a target="_blank" href="https://github.com/SA12IF34/FullStack-Portfolio/tree/main/webscraping">backend repo</a>
-                </li>
-                <li id="scentchan">
-                    <a target="_blank" href="https://scentchan.saifchan.online/">
-                        <img src="{% static 'home/imgs/ScentChan.png' %}" alt="fullstack portfolio project">
-                    </a>
-                    <a target="_blank" href="https://github.com/SA12IF34/ecommerce-frontend">frontend repo</a>
-                    <a target="_blank" href="https://github.com/SA12IF34/FullStack-Portfolio/tree/main/ecommerce">backend repo</a>
-                </li>
-                <li id="name">
-                    <a target="_blank" href="https://name.saifchan.online/">
-                        <img src="{% static 'home/imgs/home.png' %}" alt="fullstack portfolio project">
-                    </a>
-                    <a target="_blank" href="https://github.com/SA12IF34/social-media-frontend">frontend repo</a>
-                    <a target="_blank" href="https://github.com/SA12IF34/FullStack-Portfolio/tree/main/social_media">backend repo</a>
-                </li>
-            </ul>
-        </div>
+            </div>
+            <div class="skills">
+
+            </div>
+            <div class="projects">
+
+            </div>
+        </section>
+        <section class="contact">
+            <div class="links">
+
+            </div>
+            <div class="message">
+
+            </div>
+        </section>
     </div>
-    <div class="contact">
-        <h2>my accounts and contact info</h2>
-        <div>
-            <ul>
-                <li>
-                    <a target="_blank" href="https://www.linkedin.com/in/saifchan/">
-                    LinkedIn
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://github.com/SA12IF34">
-                    GitHub
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://www.upwork.com/freelancers/~01ac2d8d0f81137a51">
-                    Upwork
-                    </a>
-                </li>
-                <li>
-                    Email : saifchan@mail.com
-                </li>
-                <li>
-                    Phone No. : +962799562745
-                </li>
-            </ul>
-        </div>
-    </div>
-    <script type="module" src="{% static 'home/main.js' %}"></script>
 </body>
 </html>
