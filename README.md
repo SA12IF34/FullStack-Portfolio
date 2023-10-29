@@ -8,7 +8,7 @@ ___
 The project is devided into four parts, which are home, web scraping, ecommerce, and social media.
 #
 ### Home
-It represents the first page which you face when visit the website, and it represents the introduction and description of me any my website, as well as it
+It represents the first page which you face when visit the website, and it represents the introduction and description of me any my work, as well as it
 displays my skills, projects and contact info.
 ___
 ### Web scraping
@@ -20,7 +20,7 @@ The second project and it is perfumes ecommerce which has it's back end in this 
 the project is built using a lot of utilities and you can see them here in [it's app folder](/ecommerce).
 ___
 ### Social media
-Our last and biggest project, this is a project which it's front end is build using nextJS [here](https://github.com/SA12IF34/social-media-frontend), and it's back end is in this repo. The project has a lot of functionalities and database design. [it's app folder](/social_media)
+Our last and biggest project, this is a project which it's front end is built using nextJS [here](https://github.com/SA12IF34/social-media-frontend), and it's back end is in this repo. The project has a lot of functionalities and database design. [it's app folder](/social_media)
 ___
 ## tests
 You can take a look at the tests written in the project, and running them by using the following commands in case you cloned the repo.
