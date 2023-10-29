@@ -8,5 +8,20 @@ body {
     width: 100%;
     height: max-content;
     min-height: 100vh;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.root {
+    padding: 30px;
+    width: 100%;
+    height: max-content;
+}
+
+.root>section {
+    width: 100%;
+    padding: 20px;
+}
+
+.intro {
+    text-align: center;
 }
