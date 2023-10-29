@@ -5,142 +5,229 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+    <link rel="stylesheet" href="{% static 'home/style.css'  %}">
 </head>
 <body>
-    <div class="container">
-        <h1 id="welcome" class="not-welcome">Welcome to my website</h1>
-    </div>
-    <div class="main">
-        <p id="left" class="left-hide">
-            My name is Saif, I'm a fullstack developer.
-            I can build complete web applicaions
-        </p>
-        <p id="right" class="right-hide">
-            I'm proficient in buildig frontend with conveying the UX, and making sure 
-            the UI meets the design.
-        </p>
-        <p id="left" class="left-hide">
-            As I build the backend from database design to implementing strong 
-            and secure API endpoints.
-        </p>
-    </div>
-    <br>
-    <div class="skills">
-        <h2>I use for building web apps the following skills</h2>
-        <br>
-        <div class="backend">
-            <h3>for the backend :</h3>
-            <ul>
-                <li>Python/Django</li>
-                <li>Django rest framework</li>
-                <li>
-                    Various authentication mechanisms
-                </li>
-                <li>webs scraping using scrapy and beautifulSoup</li>
-            </ul>
-        </div>
-        <div class="frontend">
-            <h3>for the frontend :</h3>
-            <ul>
-                <li>HTML, CSS, JavaScript</li>
-                <li>React.Js/Next.Js</li>
-                <li>TailwindCSS</li>
-                <li>Three.Js</li>            
-                <li>Integrating APIs</li>
-            </ul>
-        </div>
-        <div class="all">
-            <h3>for all :</h3>
-            <ul>
-                <li>Testing</li>
-                <li>Deployment</li>
-                <li>Using AI utilities</li>
-            </ul>
-        </div>
-    </div>
-    <div class="projects">
-        <h2>My portfolio projects</h2>
-        <br>
-        <div class="frontend">
-            <h3>frontend projects :</h3>
-            <ul>
-                <li id="agency">
-                    <a target="_blank" href="https://agencysaif.vercel.app/">
-                        <img src="{% static 'home/imgs/agency.png' %}" alt="">
-                    </a>
-                    <a target="_blank" href="https://github.com/SA12IF34/agency/">Github repo</a>
-                </li>
-                <li id="steelmind">
-                    <a target="_blank" href="https://steelmind.saifchan.online/">
-                        <img src="{% static 'home/imgs/steelMind.png' %}" alt="frontend portfolio project">
-                    </a>
-                    <a target="_blank" href="https://github.com/SA12IF34/SteelMind">Github repo</a>
-                </li>
-                <li id="fate">
-                    <a target="_blank" href="https://fate-series.saifchan.online/">
-                        <img src="{% static 'home/imgs/fate.png' %}" alt="frontend portfolio project">
-                    </a>
-                    <a target="_blank" href="https://github.com/SA12IF34/Fate-Page">Github repo</a>
-                </li>
+    <div class="root">
+        <section class="intro"> 
+            <div>
+                <h1>Welcome</h1>
+                <br>
+                <br>
+                <p>
+                    I'm Saif, and I'm working as a web developer. 
+                    I have experience building full-stack web 
+                    applications.
+                </p>
+            </div>
+        </section>
+        <section class="qualifications">
+            <div class="services">
+                <h2>I can build you</h2>
+                <br>
+                <div class="content">
+                    <div>
+                        <p>
+                            A high performance web app
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            SEO friendly web app
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            Responsive web app
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            Secure web app
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            Permisson base APIs
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            Well tested web app
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="skills">
+                <h2>I can use the following skills</h2>
+                <br>
+                <div>
+                    <div class="frontend">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>TypeScript</span>
+                        <span>React.js</span>
+                        <span>Next.js</span>
+                        <span>Three.js</span>
+                    </div>
+                    <div class="backend">
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>Django rest framework</span>
+                        <span>beautifulSoup</span>
+                        <span>Scrapy</span>
+                        <span>Postgresql</span>
+                    </div>
+                </div>
+            </div>
+            <div class="projects">
+                <h2>I built projects to demonstrate my skill set</h2>
+                <br>
+                <div>
+                    
+                    <div class="project">
+                        <a href="#">
+                            <div class="img">
+                                <img src=".{% static 'home/imgs/agency.png'  %}" alt="agency project">
+                            </div>
+                        </a>
+                        <div>
+                            <span>Web Development Agency</span>
+                            <a href="#">
+                                <span>repository</span>
+                            </a>
+                            <span>
+                                used tech : next.js
+                            </span>
+                        </div>
+                        
+                    </div>
+                    <div class="project">
+                        <a href="#">
+                            <div class="img">
+                                <img src="{% static 'home/imgs/steelMind.png' %}" alt="">
+                            </div>
+                        </a>
+                        <div>
+                            <span>SteelMind Organization</span>
+                            <a href="#">
+                                <span>repository</span>
+                            </a>
+                            <span>
+                                used tech : next.js
+                            </span>
+                        </div>
+                        
+                    </div>
+                    <div class="project">
+                        <a href="#">
+                            <div class="img">
+                                <img src="{% static 'home/imgs/fate.png' %}" alt="">
+                            </div>
+                        </a>
+                        <div>
+                            <span>Fate Series Web Page</span>
+                            <a href="#">
+                                <span>repository</span>
+                            </a>
+                            <span>
+                                used tech : react.js, tailwindCSS
+                            </span>
+                        </div>
+                        
+                    </div>
+                    <div class="project">
+                        <a href="#">
+                            <div class="img">
+                                <img src="{% static 'home/imgs/Books.png' %}" alt="">
+                            </div>
+                        </a>
+                        <div>
+                            <span>Web Scraping</span>
+                            <a href="#">
+                                <span>repository</span>
+                            </a>
+                            <span>
+                                used tech : django, beautifulSoup, python requests, js
+                            </span>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <a href="#">
+                            <div class="img">
+                                <img src="{% static 'home/imgs/ScentChan.png' %}" alt="">
+                            </div>
+                        </a>
+                        <div>
+                            <span>Perfumes Ecommerce</span>
+                            <a href="#">
+                                <span>frontend repository</span>
+                            </a>
+                            <a href="#">
+                                <span>backend repository</span>
+                            </a>
+                            <span>
+                                used tech : react.js, typeScript, django, django rest framework, jwt authentication, stripe API
+                            </span>
+                        </div>
+                        
+                    </div>
+                    <div class="project">
+                        <a href="#">
+                            <div class="img">
+                                <img src="{% static 'home/imgs/name.png' %}" alt="">
+                            </div>
+                        </a>
+                        <div>
+                            <span>Name Social Media</span>
+                            <a href="#">
+                                <span>frontend repository</span>
+                            </a>
+                            <a href="#">
+                                <span>backend repository</span>
+                            </a>
+                            <span>
+                                used tech : next.js, django, jest & react testing library, django rest framework, session authentication, django testing library
+                            </span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contact">
+            <div class="links">
+                <h2>You can contact me by</h2>
+                <div>
+                    <ul>
+                        <li><a href="">LinkedIn</a></li>
+                        <li><a href="">Upwork</a></li>
+                        <li>saifchan@mail.com</li>
+                        <li>+962 79 956 2745</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="message">
+                   <div>
+                    <form action="https://api.web3forms.com/submit" method="POST">  
+                        <input type="hidden" name="access_key" value="a51e0962-12dd-43c9-8339-021ca55d9582">
+                        <input type="hidden" name="redirect" value="http://127.0.0.1:8000/">
+                        <input type="email" name="email" required placeholder="email">
+                        <input type="text" name="subject" required placeholder="subject">
+                        
+                        <textarea name="content" required placeholder="message"></textarea>
 
-            </ul>
-        </div>
-        <div class="fullstack">
-            <h3>fullstack projects :</h3>
-            <ul>
-                <li id="web-scraping">
-                    <a target="_blank" href="/projects/web-scraping/">
-                        <img src="{% static 'home/imgs/Books.png' %}" alt="fullstack portfolio project">
-                    </a>
-                    <a target="_blank" href="https://github.com/SA12IF34/FullStack-Portfolio/tree/main/frontend/templates/webscraping">frontend repo</a>
-                    <a target="_blank" href="https://github.com/SA12IF34/FullStack-Portfolio/tree/main/webscraping">backend repo</a>
-                </li>
-                <li id="scentchan">
-                    <a target="_blank" href="https://scentchan.saifchan.online/">
-                        <img src="{% static 'home/imgs/ScentChan.png' %}" alt="fullstack portfolio project">
-                    </a>
-                    <a target="_blank" href="https://github.com/SA12IF34/ecommerce-frontend">frontend repo</a>
-                    <a target="_blank" href="https://github.com/SA12IF34/FullStack-Portfolio/tree/main/ecommerce">backend repo</a>
-                </li>
-                <li id="name">
-                    <a target="_blank" href="https://name.saifchan.online/">
-                        <img src="{% static 'home/imgs/home.png' %}" alt="fullstack portfolio project">
-                    </a>
-                    <a target="_blank" href="https://github.com/SA12IF34/social-media-frontend">frontend repo</a>
-                    <a target="_blank" href="https://github.com/SA12IF34/FullStack-Portfolio/tree/main/social_media">backend repo</a>
-                </li>
-            </ul>
-        </div>
+                        <input type="submit" value="submit">
+                    </form>
+                   </div> 
+                   <div>
+                    <h2>Or you can send me a message directly</h2>
+                   </div>
+            </div>
+        </section>
     </div>
-    <div class="contact">
-        <h2>my accounts and contact info</h2>
-        <div>
-            <ul>
-                <li>
-                    <a target="_blank" href="https://www.linkedin.com/in/saifchan/">
-                    LinkedIn
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://github.com/SA12IF34">
-                    GitHub
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://www.upwork.com/freelancers/~01ac2d8d0f81137a51">
-                    Upwork
-                    </a>
-                </li>
-                <li>
-                    Email : saifchan@mail.com
-                </li>
-                <li>
-                    Phone No. : +962799562745
-                </li>
-            </ul>
-        </div>
-    </div>
-    <script type="module" src="{% static 'home/main.js' %}"></script>
+
+    <script src="{% static 'home/main.js'  %}"></script>
 </body>
 </html>
