@@ -109,16 +109,10 @@ class SearchAPI(APIView):
 
 
 class CartAPI(APIView):
-
-<<<<<<< HEAD
-class CartsAPI(APIView):
     
-    permission_classes = [permissions.IsAuthenticated]
-    authentication_classes = [JWTStatelessUserAuthentication, JWTAuthentication]
-=======
     permission_classes = [IsAuthenticated]
     authentication_classes = [JWTAuthentication]
->>>>>>> 47a308a6429d46dc99f78c1f5f6160faaaa91ed8
+
 
     def get(self, request):
         user = request.user
@@ -185,7 +179,6 @@ class BoughtsAPI(APIView):
 
 
 stripe.api_key = env('STRIPE_API')
-DOMAIN = env('DOMAIN')
 
 class CheckoutAPI(APIView):
     

@@ -14,29 +14,21 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production! 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'saifchan.site']
+ALLOWED_HOSTS = ['*', 'saifchan.online']
 
-DOMAIN = '.saifchan.site'
+DOMAIN = '.saifchan.online'
 CSRF_COOKIE_DOMAIN = DOMAIN
 SESSION_COOKIE_DOMAIN = DOMAIN
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173', 
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
-    'https://social-media-frontend-swart.vercel.app',
-    'https://perfumes-frontend.vercel.app',
-    'https://name.saifchan.site'
+    'https://scentchan.saifchan.online',
+    'https://name.saifchan.online'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'http://localhost:5173', 
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
-    'https://social-media-frontend-swart.vercel.app',
-    'https://perfumes-frontend.vercel.app',
-    'https://name.saifchan.site'
+    'https://scentchan.saifchan.online',
+    'https://name.saifchan.online'
 ]
 
 CORS_ALLOW_METHODS = (
