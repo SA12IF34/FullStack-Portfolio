@@ -1,0 +1,370 @@
+[33mcommit 5d9227fda9cf261f326230a0c1ffe368e9644faf[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Merge: 69da3a9 74b428a
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Mon Oct 30 04:05:31 2023 +0000
+
+    some changes on home page
+
+[33mcommit 69da3a9f0be5a316fada5b8db6f270a07ecaa526[m
+Author: root <root@ip-172-26-9-6.ec2.internal>
+Date:   Mon Oct 30 03:55:57 2023 +0000
+
+    change redirect path
+
+[33mcommit 74b428aca9a6b41657009e6fb5fce52fb7bdde59[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Mon Oct 30 06:53:03 2023 +0300
+
+    added links of projects and accounts
+
+[33mcommit f33b95d28454950526e9a6935a9d2416073b743d[m
+Merge: 2113aad afc524e
+Author: root <root@ip-172-26-9-6.ec2.internal>
+Date:   Sun Oct 29 19:17:02 2023 +0000
+
+    Merge branch 'main' of https://github.com/SA12IF34/FullStack-Portfolio into main
+
+[33mcommit 88facbfda2ac504db1c01b74a68f5a49ec9323f8[m
+Merge: 2c2330d afc524e
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Sun Oct 29 19:00:38 2023 +0300
+
+    Merge branch 'main' of https://github.com/SA12IF34/FullStack-Portfolio
+
+[33mcommit afc524e10262d91dcfb6bb2725b4f1d25afb6dc6[m
+Merge: e65d18a 6bbbc63
+Author: Saif <92519922+SA12IF34@users.noreply.github.com>
+Date:   Sun Oct 29 19:00:03 2023 +0300
+
+    Merge pull request #2 from SA12IF34/new-home
+    
+    New home
+
+[33mcommit 6bbbc63f9dcc155033a71592b50d0177d6aca5a5[m[33m ([m[1;31morigin/new-home[m[33m)[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Sun Oct 29 18:59:00 2023 +0300
+
+    finished new home page
+
+[33mcommit 07b4cbcb53c2b44f7e59af286cbd82a6689b3fb9[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Sun Oct 29 10:57:21 2023 +0300
+
+    changes
+
+[33mcommit 83b59c62ff510ef9aaa569959dbae132210936e4[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Sat Oct 28 20:46:28 2023 +0300
+
+    changes
+
+[33mcommit 9aeda800ec24595a3bc2852c0e20a7bc8333b6b4[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Sat Oct 28 18:55:21 2023 +0300
+
+    delete style.css content
+
+[33mcommit 2c2330d2933e943152a959ad73164154561d973e[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Sat Oct 28 18:54:30 2023 +0300
+
+    remove ecommerce folder
+
+[33mcommit e65d18a94f0d107dc0a1c9ac2361a2982c6dc2ce[m
+Author: Saif <92519922+SA12IF34@users.noreply.github.com>
+Date:   Wed Oct 25 18:46:49 2023 +0300
+
+    Update README.md
+
+[33mcommit c6635b1120a2ae30c34df49fe562f5989aeb953c[m
+Author: Saif <92519922+SA12IF34@users.noreply.github.com>
+Date:   Wed Oct 25 18:44:40 2023 +0300
+
+    Update README.md
+
+[33mcommit 2113aadafcf5b0d3bfa7752da42b7195477eed3a[m
+Merge: 35ff0ae 1c6b77d
+Author: root <root@ip-172-26-9-6.ec2.internal>
+Date:   Wed Oct 25 03:54:00 2023 +0000
+
+    Merge branch 'main' of https://github.com/SA12IF34/FullStack-Portfolio into main
+
+[33mcommit 1c6b77de5dfb4748c5a4d0460fd097a5e28cee35[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Wed Oct 25 06:52:25 2023 +0300
+
+    providing links to acontact
+
+[33mcommit 35ff0ae07a0d4d2e35fbf82c6f55ac48b1db607c[m
+Merge: 18d3449 e2c5deb
+Author: root <root@ip-172-26-9-6.ec2.internal>
+Date:   Tue Oct 24 20:29:05 2023 +0000
+
+    Merge branch 'main' of https://github.com/SA12IF34/FullStack-Portfolio into main
+
+[33mcommit e2c5debe59812ab9f4c543c99659b48fdbec872a[m
+Merge: f39a0e1 32b983a
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Tue Oct 24 23:26:14 2023 +0300
+
+    Merge branch 'main' of https://github.com/SA12IF34/FullStack-Portfolio
+
+[33mcommit f39a0e198bbb3ee62477dab19372c8e76846007b[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Tue Oct 24 23:25:57 2023 +0300
+
+    modifications on home page
+
+[33mcommit 32b983af4ec300ae1ebab03610b4b36f84175b50[m
+Author: Saif <92519922+SA12IF34@users.noreply.github.com>
+Date:   Tue Oct 24 07:01:29 2023 +0300
+
+    Update README.md
+
+[33mcommit c25a8fd796ebb5d3535141f752102c3fbebddc82[m
+Author: Saif <92519922+SA12IF34@users.noreply.github.com>
+Date:   Tue Oct 24 07:00:41 2023 +0300
+
+    Update README.md
+
+[33mcommit 418e631b4efe6d0cd3b6b0282071d50d930924be[m
+Author: Saif <92519922+SA12IF34@users.noreply.github.com>
+Date:   Tue Oct 24 06:59:00 2023 +0300
+
+    Update README.md
+
+[33mcommit c44272946962258634554f26f8f5eab3021fdd3c[m
+Author: Saif <92519922+SA12IF34@users.noreply.github.com>
+Date:   Tue Oct 24 06:38:15 2023 +0300
+
+    Update README.md
+
+[33mcommit 5ed1b4bc0d27a6229e606fb403df5660530413dd[m
+Author: Saif <92519922+SA12IF34@users.noreply.github.com>
+Date:   Tue Oct 24 02:02:58 2023 +0300
+
+    Update README.md
+
+[33mcommit 15c2f6ff0418257effc4a2e177b0d2a2803b5c4a[m
+Author: Saif <92519922+SA12IF34@users.noreply.github.com>
+Date:   Mon Oct 23 21:03:55 2023 +0300
+
+    Update README.md
+
+[33mcommit 2551745b3c7ba363b2194d954461660d9ad0819a[m
+Author: Saif <92519922+SA12IF34@users.noreply.github.com>
+Date:   Mon Oct 23 21:02:04 2023 +0300
+
+    Update README.md
+
+[33mcommit 61c26e7ad3e64f16b43bae9b6809de67064d724e[m
+Author: Saif <92519922+SA12IF34@users.noreply.github.com>
+Date:   Mon Oct 23 21:01:29 2023 +0300
+
+    Update README.md
+
+[33mcommit 18d3449d8af48df20f07d1f65735f802f87e15d3[m
+Merge: 0d44380 47a308a
+Author: root <root@ip-172-26-9-6.ec2.internal>
+Date:   Sun Oct 22 02:51:35 2023 +0000
+
+    somwthing
+
+[33mcommit 47a308a6429d46dc99f78c1f5f6160faaaa91ed8[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Sun Oct 22 05:45:00 2023 +0300
+
+    update on projects
+
+[33mcommit 0d44380a65a95be2d762b1058bc148361c53aa02[m
+Merge: 57018f8 e3e017a
+Author: root <root@ip-172-26-9-6.ec2.internal>
+Date:   Thu Aug 17 12:55:03 2023 +0000
+
+    Merge branch 'main' of https://github.com/SA12IF34/FullStack-Portfolio into main
+
+[33mcommit e3e017ad4d35ce39da4f6c2d25d4ec464d107917[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Thu Aug 17 15:05:45 2023 +0300
+
+    added notifications feature
+
+[33mcommit 57018f8b5c0706e4f04829f0462f93f496ee7127[m
+Merge: a7eca57 051dfd7
+Author: root <root@ip-172-26-9-6.ec2.internal>
+Date:   Tue Aug 15 18:10:23 2023 +0000
+
+    Merge branch 'main' of https://github.com/SA12IF34/FullStack-Portfolio into main
+
+[33mcommit 051dfd7fbda5c54d5dcce9aa91e856ea9c81a4b5[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Tue Aug 15 20:34:27 2023 +0300
+
+    added post edit feature
+
+[33mcommit a7eca5729fcb92877bc64e6f58afabe992e9a48b[m
+Merge: 1dc628e 6ae770f
+Author: root <root@ip-172-26-9-6.ec2.internal>
+Date:   Sun Aug 13 15:58:21 2023 +0000
+
+    Merge branch 'main' of https://github.com/SA12IF34/FullStack-Portfolio into main
+
+[33mcommit 6ae770f030a7f918101d1287375ae9066416834d[m
+Merge: d12f476 86a70cf
+Author: Saif <92519922+SA12IF34@users.noreply.github.com>
+Date:   Sun Aug 13 18:52:59 2023 +0300
+
+    Merge pull request #1 from SA12IF34/like-dislike-feature
+    
+    adding the models and apis for like and dislike features in social me…
+
+[33mcommit 86a70cfc6d3cd59a5af422ccee0f6e8d526823b1[m[33m ([m[1;31morigin/like-dislike-feature[m[33m, [m[1;32mlike-dislike-feature[m[33m)[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Sun Aug 13 18:49:52 2023 +0300
+
+    adding the models and apis for like and dislike features in social medial app
+
+[33mcommit 1dc628eae37d19bf204f98ebd7215eca2649c1e8[m
+Merge: f970c36 d12f476
+Author: root <root@ip-172-26-9-6.ec2.internal>
+Date:   Fri Aug 4 18:00:18 2023 +0000
+
+    Merge branch 'main' of https://github.com/SA12IF34/FullStack-Portfolio into main
+
+[33mcommit d12f476d35d22d61108b5b0493beff60be54c13f[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Fri Aug 4 21:00:06 2023 +0300
+
+    frontend
+
+[33mcommit f970c3645952b249d8cc98649f18a60036933e5c[m
+Merge: 9600c13 60650da
+Author: root <root@ip-172-26-9-6.ec2.internal>
+Date:   Fri Aug 4 17:59:05 2023 +0000
+
+    Merge branch 'main' of https://github.com/SA12IF34/FullStack-Portfolio into main
+
+[33mcommit 60650dab1e3b744511486418433b1a66124ecd91[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Fri Aug 4 20:57:40 2023 +0300
+
+    changed domain name
+
+[33mcommit 9600c135436cb0bf77eac39278c8e82c33964a3d[m
+Merge: 9b0b38f 5021cae
+Author: root <root@ip-172-26-9-6.ec2.internal>
+Date:   Tue Aug 1 20:02:08 2023 +0000
+
+    Merge branch 'main' of https://github.com/SA12IF34/FullStack-Portfolio into main
+
+[33mcommit 5021caec7a34db26e2df5ee965d24709d7e0e627[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Tue Aug 1 23:00:47 2023 +0300
+
+    change in account api
+
+[33mcommit 9b0b38f9083fae8181fcb1fe7e483fd475e26d4e[m
+Merge: 8a7065e 7c8fad4
+Author: root <root@ip-172-26-9-6.ec2.internal>
+Date:   Tue Aug 1 18:12:14 2023 +0000
+
+    Merge branch 'main' of https://github.com/SA12IF34/FullStack-Portfolio into main
+
+[33mcommit 7c8fad4858f45f4c05f92108ca66e7306e8a87a7[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Tue Aug 1 21:12:02 2023 +0300
+
+    last modifications on home style.css
+
+[33mcommit 8a7065e1a7608f23eb5f9b534ef7e1061f800e2d[m
+Merge: 177cc57 90cc40f
+Author: root <root@ip-172-26-9-6.ec2.internal>
+Date:   Tue Aug 1 18:01:11 2023 +0000
+
+    Merge branch 'main' of https://github.com/SA12IF34/FullStack-Portfolio into main
+
+[33mcommit 90cc40fa437a8dfcb455a535ce74ee08a36e365e[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Tue Aug 1 21:00:51 2023 +0300
+
+    more adjustment on style.css
+
+[33mcommit 177cc573298faf420a2bb1bc9e0ab8171a630732[m
+Merge: 70034fa 1fea1c8
+Author: root <root@ip-172-26-9-6.ec2.internal>
+Date:   Tue Aug 1 17:57:29 2023 +0000
+
+    Merge branch 'main' of https://github.com/SA12IF34/FullStack-Portfolio into main
+
+[33mcommit 1fea1c811967f7717cecfb708d55cc4a44f8aa4a[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Tue Aug 1 20:57:11 2023 +0300
+
+    adjust home index.html too
+
+[33mcommit 70034fa29a951365c7492ac85735aebc48d14ccc[m
+Merge: beec4be edf66db
+Author: root <root@ip-172-26-9-6.ec2.internal>
+Date:   Tue Aug 1 17:52:47 2023 +0000
+
+    Merge branch 'main' of https://github.com/SA12IF34/FullStack-Portfolio into main
+
+[33mcommit beec4be45490c465d7c7ed1ccccbe57091ae152a[m
+Author: root <root@ip-172-26-9-6.ec2.internal>
+Date:   Tue Aug 1 17:52:34 2023 +0000
+
+    modifying models.py
+
+[33mcommit edf66db2be809df9f1cfd4012f966f3fddbd0bfa[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Tue Aug 1 20:26:32 2023 +0300
+
+    adjusting margin
+
+[33mcommit b44caa6901d1c10696ac2de8a23493f6be047614[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Tue Aug 1 09:07:44 2023 +0300
+
+    adding links
+
+[33mcommit 11d30f8c86a825593b8bd45b8e201f88111682c5[m
+Author: Saif <92519922+SA12IF34@users.noreply.github.com>
+Date:   Tue Aug 1 07:05:45 2023 +0300
+
+    Create README.md
+
+[33mcommit 324949d9f62ad5f5469d258b2467e5320c365f3f[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Tue Aug 1 03:45:03 2023 +0300
+
+    auth
+
+[33mcommit 7bafec175ea052a4216b0b7d64ecdfaa430655d6[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Tue Aug 1 03:34:11 2023 +0300
+
+    somthing'
+
+[33mcommit c3870a7027787b84ae9dd3eb0d7da8f3dc02daad[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Tue Aug 1 03:12:28 2023 +0300
+
+    hello
+
+[33mcommit 5fb797a211a3299522ecad18cc2c8cc5149484b2[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Tue Aug 1 02:44:19 2023 +0300
+
+    nothing
+
+[33mcommit cb2d6881df2be234a9cf680f666fc20a0ceab98a[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Tue Aug 1 02:41:18 2023 +0300
+
+    specifying authentication classes
+
+[33mcommit 49222c91537c4de202e9c9c4afa64e689aeabadf[m
+Author: Saif <ayeshsaif367@gmail.com>
+Date:   Mon Jul 31 20:48:18 2023 +0300
+
+    my first commit

@@ -14,21 +14,23 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production! 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'saifchan.online']
+ALLOWED_HOSTS = []
 
-DOMAIN = '.saifchan.online'
-CSRF_COOKIE_DOMAIN = DOMAIN
-SESSION_COOKIE_DOMAIN = DOMAIN
 
 CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_PRIVATE_NETWORK = True
 CORS_ALLOWED_ORIGINS = [
-    'https://scentchan.saifchan.online',
-    'https://name.saifchan.online'
+    'http://localhost:5173', 
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'https://soso-sable.vercel.app'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://scentchan.saifchan.online',
-    'https://name.saifchan.online'
+    'http://localhost:5173', 
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'https://soso-sable.vercel.app'
 ]
 
 CORS_ALLOW_METHODS = (
@@ -105,7 +107,7 @@ SIMPLE_JWT = {
     "AUTH_HEADER_NAME": "HTTP_AUTHORIZATION",
     "USER_ID_FIELD": "id",
     "USER_ID_CLAIM": "user_id",
-    "USER_AUTHENTICATION_RULE": "rest_framework_simplejwt.authentication.default_user_authentication_rule",
+    # "USER_AUTHENTICATION_RULE": "rest_framework_simplejwt.authentication.default_user_authentication_rule",
 
     "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
     "TOKEN_TYPE_CLAIM": "token_type",
@@ -154,7 +156,7 @@ WSGI_APPLICATION = 'fullstack.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/var/www/db/db.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -194,13 +196,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/assets/'
-STATIC_ROOT = '/var/www/assets'
+
 STATICFILES_DIRS = [
     BASE_DIR/'assets/'
 ]
 
 
-MEDIA_ROOT = '/var/www/project/media'
+MEDIA_ROOT = BASE_DIR/ 'media_files'
 MEDIA_URL = '/media/'
 
 # Default primary key field type
